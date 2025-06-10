@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Мапа спогадів</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <header>
+        <h1>Мапа спогадів</h1>
+    </header>
+
+    <main>
+        <div id="map"></div>
+        <button id="add-memory">Додати спогад</button>
+
+        <div id="memory-form" class="hidden">
+            <h2>Новий спогад</h2>
+            <form id="add-form">
+                <input type="text" id="title" placeholder="Назва" required>
+                <textarea id="description" placeholder="Опис спогаду" required></textarea>
+                <input type="date" id="memory-date">
+                <input type="text" id="author" placeholder="Ваше ім'я (необов'язково)">
+                <input type="file" id="media" accept="image/*,video/*">
+                <p id="location-text">Оберіть місце на карті</p>
+                <div class="form-buttons">
+                    <button type="submit">Зберегти</button>
+                    <button type="button" id="cancel">Скасувати</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="memory-details" class="hidden">
+            <button id="close-details">✕</button>
+            <h2 id="detail-title"></h2>
+            <p id="detail-date"></p>
+            <div id="detail-media"></div>
+            <p id="detail-description"></p>
+            <p id="detail-author"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Мапа спогадів</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
